@@ -1,5 +1,32 @@
 <?php
 #---------------------------------------------------------------------------------------------------
+function semakPembolehubah($senarai,$jadual,$p='0')
+{
+	echo '<pre>$' . $jadual . '=><br>';
+	if($p == '0') print_r($senarai);
+	if($p == '1') var_export($senarai);
+	if($p == '2') var_dump($senarai);
+	echo '</pre><hr>';//*/
+	//$this->semakPembolehubah($ujian,'ujian',0);
+	#http://php.net/manual/en/function.var-export.php
+	#http://php.net/manual/en/function.print-r.php
+}
+#---------------------------------------------------------------------------------------------------
+function debugData($url, $Url = null)
+{
+	semakPembolehubah($url,'x0');
+	# semak $url
+	if($url == '') echo '$url kosong daa<hr>';
+	else echo '$url adalah tatasusunan<hr>';
+	# semak $Url
+	if($Url == null) echo '$Url kosong daa<hr>';
+	else
+	{
+		semakPembolehubah($Url,'Url adalah tatasusunan ');
+	}
+	# mungkin akan sambung nota lagi
+}
+#---------------------------------------------------------------------------------------------------
 function huruf($jenis , $papar)
 {
 	/*
