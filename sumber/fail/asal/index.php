@@ -54,7 +54,7 @@
 			</div>
 			<div class = "col-lg-1"></div>
 			<div class = "col-lg-8 well">
-				<img src = "images/logo.jpg" height = "449px" width = "100%" />
+				<img src = "images/logo.png" height = "449px" width = "100%" />
 			</div>
 		</div>
 		<nav class = "navbar navbar-default navbar-fixed-bottom">
