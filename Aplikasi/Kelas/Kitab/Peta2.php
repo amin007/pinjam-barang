@@ -31,6 +31,25 @@ class Peta2
 		list($url,$Url) = $this->semakURL($url);
 		//$this->debugData($url,$Url);#semak untuk masa depan
 
+		# 2. cari controller => kawal
+		$url = $this->semakKawal($url,$Url);
+		//$this->semakPembolehubah($url,'url selepas class');
+
+	}
+#---------------------------------------------------------------------------------------------------
+	function semakKawal($url,$Url)
+	{
+		if( file_exists(KAWAL . '/' . $url[0] . '.php') )
+		{
+			$this->kawal = $Url[0];
+			//echo 'lokasi fail:' . KAWAL . '/' . $url[0] . '.php<hr>';
+			//echo 'nama class:' . $this->kawal . '<hr>';
+			require_once KAWAL . '/' . $url[0] . '.php';
+			unset($url[0]);
+		}
+		$this->kawal = new $this->kawal;# nilai default adalah index
+
+		return $url;
 	}
 #---------------------------------------------------------------------------------------------------
 ####################################################################################################
