@@ -16,7 +16,7 @@ class Peta2
 #---------------------------------------------------------------------------------------------------
 	public function parseURL()
 	{
-		semakPembolehubah($_GET,'_GET');
+		//semakPembolehubah($_GET,'_GET');
 		if( isset($_GET['url']) )
 		{
 			$url = rtrim($_GET['url'], '/');
@@ -34,9 +34,9 @@ class Peta2
 
 		# 2. beri nilai awal kepada $url dan $Url
 		list($url,$Url) = $this->semakURL($url);
-		debugData($url,$Url);#semak untuk masa depan
+		//debugData($url,$Url);#semak untuk masa depan
 
-		/*# 3. cari controller => kawal
+		# 3. cari controller => kawal
 		$url = $this->semakKawal($url,$Url);
 		//$this->semakPembolehubah($url,'url selepas class');
 
