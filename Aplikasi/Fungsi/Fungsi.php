@@ -1,5 +1,33 @@
 <?php
 #---------------------------------------------------------------------------------------------------
+function huruf($jenis , $papar)
+{
+	/*
+	$_POST=strtoupper($_POST['']['']);
+	$_POST=strtolower($_POST['']['']);
+	$_POST=mb_convert_case($_POST[''][''], MB_CASE_TITLE);
+	ucfirst
+	*/
+
+	switch ($jenis)
+	{# mula - pilih $jenis
+	case "BESAR": # huruf('BESAR', )
+		$papar = strtoupper($papar);
+		break;
+	case "kecil": # huruf('kecil', )
+		$papar = strtolower($papar);
+		break;
+	case "Besar": # huruf('Besar', )
+		$papar = ucfirst($papar);
+		break;
+	case "Besar_Depan": # huruf('Besar_Depan', )
+		$papar = mb_convert_case($papar, MB_CASE_TITLE);
+		break;
+	}# tamat - pilih $jenis
+
+	return $papar;
+}
+#---------------------------------------------------------------------------------------------------
 # lisfile2 - mula
 function GetMatchingFiles($files, $search)
 {
