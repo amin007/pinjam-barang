@@ -68,3 +68,5 @@
 echo '<pre>';
 print_r($_POST);
 echo '</pre>';
+echo 'Admin = <a href="admin.php">Klik</a>';
+echo '<br>Student = <a href="student.php">Klik</a>';
