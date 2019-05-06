@@ -7,12 +7,17 @@
 		$book_author = $_POST['book_author'];
 		$date_publish = $_POST['date_publish'];
 		$qty = $_POST['qty'];
-		$conn->query("INSERT INTO `book` VALUES('', '$book_title', '$book_desc', '$book_category', '$book_author', '$date_publish', '$qty')") or die(mysqli_error());
+		$sql = "INSERT INTO `book`
+		VALUES('', '$book_title', '$book_desc', '$book_category', '$book_author', '$date_publish', '$qty')";
+		echo "<pre>$sql</pre>";
+		/*$conn->query("INSERT INTO `book`
+		VALUES('', '$book_title', '$book_desc', '$book_category', '$book_author', '$date_publish', '$qty')")
+		or die(mysqli_error());
 		
 		echo'
 			<script type = "text/javascript">
 				alert("Successfully saved data");
 				window.location = "book.php";
 			</script>
-		';
+		';*/
 	}
