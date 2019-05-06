@@ -30,6 +30,8 @@ class Peta2
 		//echo '<hr> Nama class : ' . __METHOD__ . '<hr>';
 		# 1. capai fungsi $this->parseURL() dan masukkan dalam $url
 		$url = $this->parseURL();
+
+		# 2. beri nilai awal kepada $url dan $Url
 		list($url,$Url) = $this->semakURL($url);
 		//$this->debugData($url,$Url);#semak untuk masa depan
 
