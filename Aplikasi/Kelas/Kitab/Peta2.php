@@ -1,10 +1,11 @@
 <?php
 /* Ini class untuk
  * 1. capai fungsi $this->parseURL() dan masukkan dalam $url
- * 2. cari controller => kawal
- * 3. cari method => fungsi
- * 4. masukkan tatasusunan dalam params jika ada
- * 5. jalankan controller & method, serta kirim params jika ada
+ * 2. beri nilai awal kepada $url dan $Url
+ * 3. cari controller => kawal
+ * 4. cari method => fungsi
+ * 5. masukkan tatasusunan dalam params jika ada
+ * 6. jalankan controller & method, serta kirim params jika ada
  */
 namespace Aplikasi\Kitab;//echo __NAMESPACE__;
 class Peta2
@@ -35,18 +36,18 @@ class Peta2
 		list($url,$Url) = $this->semakURL($url);
 		//$this->debugData($url,$Url);#semak untuk masa depan
 
-		# 2. cari controller => kawal
+		# 3. cari controller => kawal
 		$url = $this->semakKawal($url,$Url);
 		//$this->semakPembolehubah($url,'url selepas class');
 
-		# 3. cari method => fungsi
+		# 4. cari method => fungsi
 		$url = $this->semakMethod($url);
 		//$this->semakPembolehubah($url,'url selepas method');
 
-		# 4. masukkan tatasusunan dalam params jika ada
+		# 5. masukkan tatasusunan dalam params jika ada
 		if(!empty($url)) $this->params = array_values($url);
 
-		# 5. jalankan controller & method, serta kirim params jika ada
+		# 6. jalankan controller & method, serta kirim params jika ada
 		call_user_func_array([$this->kawal,$this->method], $this->params);
 	}
 #---------------------------------------------------------------------------------------------------
