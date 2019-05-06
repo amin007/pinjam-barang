@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	//require_once 'valid.php';
+	require_once 'valid.php';
 ?>	
 <html lang = "eng">
 	<head>
