@@ -35,6 +35,10 @@ class Peta2
 		$url = $this->semakKawal($url,$Url);
 		//$this->semakPembolehubah($url,'url selepas class');
 
+		# 3. cari method => fungsi
+		$url = $this->semakMethod($url);
+		//$this->semakPembolehubah($url,'url selepas method');
+
 	}
 #---------------------------------------------------------------------------------------------------
 	function semakKawal($url,$Url)
@@ -48,6 +52,24 @@ class Peta2
 			unset($url[0]);
 		}
 		$this->kawal = new $this->kawal;# nilai default adalah index
+
+		return $url;
+	}
+#---------------------------------------------------------------------------------------------------
+	function semakMethod($url)
+	{
+		# jika $url[1] tak disetkan, bagi $method='index'
+		$method = (isset($url[1])) ? $url[1] : 'index';
+
+		if( isset($method) )
+		{
+			if( method_exists($this->kawal, $method) )
+			{
+				$this->method = $method;# nilai default adalah index
+				//echo 'nama method:' . $method . '<hr>';
+				unset($url[1]);
+			}
+		}
 
 		return $url;
 	}
