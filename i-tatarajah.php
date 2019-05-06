@@ -8,3 +8,6 @@ define('FUNGSI', 'Aplikasi/Fungsi');
 
 # Fungsi Global
 require FUNGSI . '/Fungsi.php';
+
+# Sentiasa menyediakan garis condong di belakang (/) pada hujung jalan
+define('URL', dirname('http://' . $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF']) . '/');
